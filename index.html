@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apply to join the Burger Factory House Atlanta team." />
+  <meta name="theme-color" content="#111111" />
+  <title>Join Our Team | Burger Factory House Atlanta</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="hero">
+      <div class="hero__glow hero__glow--one"></div>
+      <div class="hero__glow hero__glow--two"></div>
+      <div class="container hero__inner">
+        <div class="brand-lockup" aria-label="Burger Factory House Atlanta">
+          <div class="brand-mark" aria-hidden="true">
+            <span class="brand-mark__bun">●</span>
+            <span class="brand-mark__line"></span>
+            <span class="brand-mark__patty"></span>
+            <span class="brand-mark__line brand-mark__line--bottom"></span>
+          </div>
+          <div>
+            <p class="brand-eyebrow">BURGER FACTORY HOUSE</p>
+            <p class="brand-city">ATLANTA</p>
+          </div>
+        </div>
+
+        <div class="hero__copy">
+          <span class="pill">NOW HIRING</span>
+          <h1>Build great food.<br />Create great experiences.</h1>
+          <p>We’re looking for dependable, energetic people who care about teamwork, hospitality, and doing things right. Tell us about yourself and let’s see if there’s a fit.</p>
+          <div class="hero__meta">
+            <span>⏱ About 5–7 minutes</span>
+            <span>📱 Mobile friendly</span>
+            <span>🔒 Private application</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container application-wrap">
+      <section class="application-card" aria-labelledby="application-title">
+        <div class="application-card__top">
+          <div>
+            <p class="section-kicker">EMPLOYMENT APPLICATION</p>
+            <h2 id="application-title">Join the Burger Factory House Team</h2>
+            <p>Complete the application below. If your experience and availability match our current needs, our hiring team may contact you regarding next steps.</p>
+          </div>
+          <div class="progress-copy"><span id="progressStep">Step 1</span> of 5</div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-track__bar" id="progressBar"></div>
+        </div>
+
+        <nav class="step-nav" aria-label="Application progress">
+          <button type="button" class="step-nav__item is-active" data-step-jump="1"><span>1</span><small>About You</small></button>
+          <button type="button" class="step-nav__item" data-step-jump="2"><span>2</span><small>Role</small></button>
+          <button type="button" class="step-nav__item" data-step-jump="3"><span>3</span><small>Availability</small></button>
+          <button type="button" class="step-nav__item" data-step-jump="4"><span>4</span><small>Experience</small></button>
+          <button type="button" class="step-nav__item" data-step-jump="5"><span>5</span><small>Finish</small></button>
+        </nav>
+
+        <form id="jobApplication" novalidate>
+          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <section class="form-step is-active" data-step="1">
+            <div class="step-heading">
+              <span class="step-heading__number">01</span>
+              <div><h3>Tell us about you</h3><p>Start with the best way for our hiring team to reach you.</p></div>
+            </div>
+
+            <div class="form-grid form-grid--2">
+              <label class="field field--full">
+                <span>Full name <b>*</b></span>
+                <input name="fullName" type="text" autocomplete="name" required placeholder="First and last name" />
+              </label>
+              <label class="field">
+                <span>Mobile phone <b>*</b></span>
+                <input name="phone" type="tel" autocomplete="tel" required placeholder="(404) 555-0123" />
+              </label>
+              <label class="field">
+                <span>Email address <b>*</b></span>
+                <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+              </label>
+              <label class="field field--full">
+                <span>City and state <b>*</b></span>
+                <input name="cityState" type="text" autocomplete="address-level2" required placeholder="Atlanta, GA" />
+              </label>
+              <div class="field field--full">
+                <span>Preferred contact method <b>*</b></span>
+                <div class="choice-row">
+                  <label class="choice"><input type="radio" name="contactMethod" value="Text message" required /><span>Text message</span></label>
+                  <label class="choice"><input type="radio" name="contactMethod" value="Phone call" /><span>Phone call</span></label>
+                  <label class="choice"><input type="radio" name="contactMethod" value="Email" /><span>Email</span></label>
+                </div>
+              </div>
+              <div class="field">
+                <span>Are you at least 18 years old? <b>*</b></span>
+                <select name="age18" required><option value="">Select</option><option>Yes</option><option>No</option></select>
+              </div>
+              <div class="field">
+                <span>Authorized to work in the U.S.? <b>*</b></span>
+                <select name="workAuthorized" required><option value="">Select</option><option>Yes</option><option>No</option></select>
+              </div>
+            </div>
+            <div class="info-note">If hired, you will be required to provide documentation establishing identity and employment authorization as required by law.</div>
+          </section>
+
+          <section class="form-step" data-step="2">
+            <div class="step-heading">
+              <span class="step-heading__number">02</span>
+              <div><h3>What role fits you?</h3><p>Select every position you would genuinely consider.</p></div>
+            </div>
+
+            <div class="field">
+              <span>Position(s) interested in <b>*</b></span>
+              <div class="position-grid" data-required-group="positions">
+                <label class="position-card"><input type="checkbox" name="positions" value="Cashier / Front Counter" /><span><strong>Cashier</strong><small>Front counter & guests</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Cook / Grill" /><span><strong>Cook / Grill</strong><small>Line execution</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Kitchen Prep" /><span><strong>Kitchen Prep</strong><small>Prep & station readiness</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Food Runner / Expo" /><span><strong>Runner / Expo</strong><small>Accuracy & speed</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Server / Guest Service" /><span><strong>Guest Service</strong><small>Hospitality focused</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Dishwasher" /><span><strong>Dishwasher</strong><small>Clean & organized</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Cleaning / Maintenance" /><span><strong>Maintenance</strong><small>Restaurant upkeep</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Shift Lead" /><span><strong>Shift Lead</strong><small>Lead the floor</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Assistant Manager" /><span><strong>Assistant Manager</strong><small>Operations support</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Manager" /><span><strong>Manager</strong><small>Team & operations</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Delivery / Driver" /><span><strong>Delivery / Driver</strong><small>Reliable transport</small></span></label>
+                <label class="position-card"><input type="checkbox" name="positions" value="Other" data-toggle="otherPosition" /><span><strong>Other</strong><small>Tell us below</small></span></label>
+              </div>
+              <p class="field-error" data-group-error="positions">Please select at least one position.</p>
+            </div>
+
+            <label class="field conditional hidden" id="otherPositionWrap">
+              <span>Other position</span>
+              <input name="otherPosition" type="text" placeholder="Position you're interested in" />
+            </label>
+
+            <div class="form-grid form-grid--2">
+              <label class="field"><span>Employment preference <b>*</b></span><select name="employmentPreference" required><option value="">Select</option><option>Full-Time</option><option>Part-Time</option><option>Either</option></select></label>
+              <label class="field"><span>Earliest start date <b>*</b></span><input name="startDate" type="date" required /></label>
+              <label class="field"><span>Desired hours per week</span><select name="desiredHours"><option value="">Select</option><option>Under 15</option><option>15–24</option><option>25–34</option><option>35–40</option><option>40+</option></select></label>
+              <label class="field"><span>Reliable transportation to shifts? <b>*</b></span><select name="reliableTransportation" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+            </div>
+          </section>
+
+          <section class="form-step" data-step="3">
+            <div class="step-heading"><span class="step-heading__number">03</span><div><h3>Your availability</h3><p>Give us a realistic picture of when you can consistently work.</p></div></div>
+
+            <div class="availability-card">
+              <div class="availability-card__head"><span>Day</span><span>Availability</span></div>
+              <div class="availability-row"><strong>Monday</strong><select name="availabilityMonday" required><option value="">Select</option><option>Not Available</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Open Availability</option></select></div>
+              <div class="availability-row"><strong>Tuesday</strong><select name="availabilityTuesday" required><option value="">Select</option><option>Not Available</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Open Availability</option></select></div>
+              <div class="availability-row"><strong>Wednesday</strong><select name="availabilityWednesday" required><option value="">Select</option><option>Not Available</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Open Availability</option></select></div>
+              <div class="availability-row"><strong>Thursday</strong><select name="availabilityThursday" required><option value="">Select</option><option>Not Available</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Open Availability</option></select></div>
+              <div class="availability-row"><strong>Friday</strong><select name="availabilityFriday" required><option value="">Select</option><option>Not Available</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Open Availability</option></select></div>
+              <div class="availability-row"><strong>Saturday</strong><select name="availabilitySaturday" required><option value="">Select</option><option>Not Available</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Open Availability</option></select></div>
+              <div class="availability-row"><strong>Sunday</strong><select name="availabilitySunday" required><option value="">Select</option><option>Not Available</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Open Availability</option></select></div>
+            </div>
+
+            <label class="field"><span>Scheduling restrictions or specific hours</span><textarea name="scheduleRestrictions" rows="3" placeholder="Example: Available after 4 PM on weekdays; open availability Saturday and Sunday."></textarea></label>
+
+            <div class="form-grid form-grid--3">
+              <label class="field"><span>Evenings? <b>*</b></span><select name="evenings" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+              <label class="field"><span>Weekends? <b>*</b></span><select name="weekends" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+              <label class="field"><span>Holidays if scheduled? <b>*</b></span><select name="holidays" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+            </div>
+          </section>
+
+          <section class="form-step" data-step="4">
+            <div class="step-heading"><span class="step-heading__number">04</span><div><h3>Experience & strengths</h3><p>Restaurant experience helps, but attitude, reliability, and willingness to learn matter too.</p></div></div>
+
+            <div class="form-grid form-grid--2">
+              <label class="field"><span>Restaurant, hospitality, retail, or customer-service experience? <b>*</b></span><select name="hasExperience" id="hasExperience" required><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+              <label class="field"><span>Relevant certification?</span><select name="hasCertification" id="hasCertification"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+            </div>
+
+            <div class="conditional-panel hidden" id="experiencePanel">
+              <div class="form-grid form-grid--2">
+                <label class="field"><span>Most recent employer</span><input name="recentEmployer" type="text" /></label>
+                <label class="field"><span>Job title</span><input name="recentJobTitle" type="text" /></label>
+                <label class="field"><span>City / State</span><input name="recentEmployerLocation" type="text" /></label>
+                <label class="field"><span>Dates employed</span><input name="datesEmployed" type="text" placeholder="Example: May 2024 – Aug 2026" /></label>
+                <label class="field field--full"><span>Main responsibilities</span><textarea name="mainResponsibilities" rows="3"></textarea></label>
+                <label class="field"><span>Reason for leaving</span><input name="reasonLeaving" type="text" /></label>
+                <label class="field"><span>May we contact this employer?</span><select name="contactEmployer"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+              </div>
+            </div>
+
+            <div class="conditional-panel hidden" id="certificationPanel">
+              <div class="form-grid form-grid--2">
+                <label class="field"><span>Certification(s)</span><input name="certifications" type="text" placeholder="ServSafe, Food Handler, etc." /></label>
+                <label class="field"><span>Expiration date, if applicable</span><input name="certExpiration" type="date" /></label>
+              </div>
+            </div>
+
+            <label class="field"><span>Additional relevant experience</span><textarea name="additionalExperience" rows="4" placeholder="Tell us about kitchen, management, customer service, cash handling, food service, or other useful experience."></textarea></label>
+            <label class="field"><span>Why would you like to work at Burger Factory House? <b>*</b></span><textarea name="whyWorkHere" rows="4" required minlength="20" placeholder="Tell us what interests you about joining the team."></textarea></label>
+            <label class="field"><span>What does excellent customer service mean to you? <b>*</b></span><textarea name="customerService" rows="4" required minlength="20"></textarea></label>
+            <label class="field"><span>A customer says their order is incorrect during a busy rush. What would you do? <b>*</b></span><textarea name="rushScenario" rows="4" required minlength="20"></textarea></label>
+
+            <div class="form-grid form-grid--2">
+              <label class="field"><span>Strongest qualities as a team member</span><textarea name="strengths" rows="3"></textarea></label>
+              <label class="field"><span>Previously worked for Burger Factory or a related location?</span><select name="workedBurgerFactory" id="workedBurgerFactory"><option value="">Select</option><option>Yes</option><option>No</option></select></label>
+            </div>
+            <label class="field conditional hidden" id="previousLocationWrap"><span>Location and approximate dates</span><input name="previousBurgerFactoryDetails" type="text" /></label>
+
+            <div class="form-grid form-grid--2">
+              <label class="field"><span>How did you hear about this opportunity?</span><select name="hearAbout" id="hearAbout"><option value="">Select</option><option>Walk-in</option><option>Employee referral</option><option>Friend or family</option><option>Social media</option><option>Online job posting</option><option>Google</option><option>Other</option></select></label>
+              <label class="field conditional hidden" id="referralNameWrap"><span>Employee referral name</span><input name="referralName" type="text" /></label>
+            </div>
+          </section>
+
+          <section class="form-step" data-step="5">
+            <div class="step-heading"><span class="step-heading__number">05</span><div><h3>Final details</h3><p>Add references and an optional résumé, then certify your application.</p></div></div>
+
+            <div class="subsection-title"><span>Professional Reference #1</span><small>Required</small></div>
+            <div class="form-grid form-grid--3">
+              <label class="field"><span>Name <b>*</b></span><input name="reference1Name" type="text" required /></label>
+              <label class="field"><span>Relationship <b>*</b></span><input name="reference1Relationship" type="text" required placeholder="Supervisor, coworker, etc." /></label>
+              <label class="field"><span>Phone <b>*</b></span><input name="reference1Phone" type="tel" required /></label>
+            </div>
+
+            <div class="subsection-title"><span>Professional Reference #2</span><small>Optional</small></div>
+            <div class="form-grid form-grid--3">
+              <label class="field"><span>Name</span><input name="reference2Name" type="text" /></label>
+              <label class="field"><span>Relationship</span><input name="reference2Relationship" type="text" /></label>
+              <label class="field"><span>Phone</span><input name="reference2Phone" type="tel" /></label>
+            </div>
+
+            <div class="upload-box">
+              <label for="resume"><strong>Upload résumé <span>Optional</span></strong><small>PDF, DOC, or DOCX · Maximum 4 MB</small></label>
+              <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+              <div id="fileStatus" class="file-status">No file selected</div>
+            </div>
+
+            <div class="legal-card">
+              <h4>Applicant Certification</h4>
+              <p>I certify that the information I have provided in this application is true and complete to the best of my knowledge. I understand that false or misleading information may affect my eligibility for employment or, if hired, may result in termination. I authorize Burger Factory House to verify information related to my employment history and references as permitted by law. I understand that submitting this application does not create a contract of employment or guarantee an interview or job offer. If hired, employment will be subject to applicable company policies and federal, state, and local law.</p>
+              <p class="legal-card__equal">Burger Factory House is committed to providing equal employment opportunities in accordance with applicable law. Employment decisions are made without unlawful discrimination.</p>
+            </div>
+
+            <label class="certify-check"><input type="checkbox" name="certified" value="Yes" required /><span>I have read and agree to the Applicant Certification above. <b>*</b></span></label>
+
+            <div class="form-grid form-grid--2">
+              <label class="field"><span>Electronic signature <b>*</b></span><input name="signature" type="text" required placeholder="Type your full legal name" /></label>
+              <label class="field"><span>Date <b>*</b></span><input name="signatureDate" id="signatureDate" type="date" required /></label>
+            </div>
+
+            <div class="privacy-note">🔒 Your application is sent directly to the restaurant’s private application system. Do not enter Social Security numbers, banking information, medical information, or other sensitive documents here.</div>
+          </section>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn--secondary hidden" id="prevBtn">← Back</button>
+            <button type="button" class="btn btn--primary" id="nextBtn">Continue →</button>
+            <button type="submit" class="btn btn--submit hidden" id="submitBtn"><span class="btn__label">Submit Application</span><span class="btn__spinner" aria-hidden="true"></span></button>
+          </div>
+          <p class="form-global-error hidden" id="globalError" role="alert"></p>
+        </form>
+      </section>
+
+      <aside class="trust-row" aria-label="Application information">
+        <div><strong>Equal Opportunity</strong><span>Hiring decisions follow applicable law.</span></div>
+        <div><strong>Applicant Privacy</strong><span>Applications are not stored in the public website repository.</span></div>
+        <div><strong>Simple Process</strong><span>No account or login required to apply.</span></div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="container footer__inner">
+        <div><strong>BURGER FACTORY HOUSE</strong><span>Atlanta, Georgia</span></div>
+        <p>Employment Application · © <span id="year"></span> Burger Factory House. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="success-screen hidden" id="successScreen" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+      <p class="section-kicker">APPLICATION RECEIVED</p>
+      <h2 id="successTitle">Thank you for applying.</h2>
+      <p>Your application has been submitted to Burger Factory House – Atlanta. If your qualifications and availability match our current hiring needs, a member of our team may contact you regarding next steps.</p>
+      <button type="button" class="btn btn--primary" id="closeSuccess">Done</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
