@@ -1299,58 +1299,102 @@ footer {
    ========================================================= */
 
 @media (max-width: 760px) {
+  html {
+    background: #efe5d7;
+  }
+
   body {
-    padding-top: calc(var(--appbar-h) + env(safe-area-inset-top));
+    padding-top: calc(88px + env(safe-area-inset-top));
+    background:
+      radial-gradient(circle at 100% 0%, rgba(246,183,60,.18), transparent 28%),
+      linear-gradient(180deg, #f8efe4 0%, #efe4d5 100%);
   }
 
   .container {
     width: 100%;
+    margin: 0;
   }
 
+  /* ==========================================
+     FLOATING NATIVE-STYLE APP HEADER
+     ========================================== */
   .appbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: calc(8px + env(safe-area-inset-top));
+    left: 10px;
+    right: 10px;
     z-index: 9000;
-    height: calc(var(--appbar-h) + env(safe-area-inset-top));
+
+    height: 68px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: env(safe-area-inset-top) 15px 0;
-    background: rgba(255, 250, 244, .94);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 5px 18px rgba(68, 38, 20, .05);
+
+    padding: 0 14px;
+
+    background: rgba(255,255,255,.96);
+
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+    border: 1px solid rgba(218,203,187,.95);
+    border-radius: 22px;
+
+    box-shadow:
+      0 12px 30px rgba(62,37,22,.10),
+      inset 0 1px 0 rgba(255,255,255,.85);
   }
 
   .appbar__brand {
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 10px;
   }
 
+  .appbar__brand > div {
+    min-width: 0;
+  }
+
   .appbar__brand strong {
     display: block;
+    max-width: 210px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
     color: var(--ink);
     font-family: var(--display);
     font-size: 12px;
-    letter-spacing: .09em;
+    font-weight: 800;
+    letter-spacing: .055em;
+    line-height: 1.1;
   }
 
   .appbar__brand small {
     display: block;
-    margin-top: 1px;
+    margin-top: 3px;
+
     color: var(--orange);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 750;
+  }
+
+  .logo--sm {
+    width: 42px;
+    height: 42px;
+    flex: none;
+    border-radius: 13px;
+    border: 2px solid #fff;
+    box-shadow: 0 6px 16px rgba(74,40,18,.14);
   }
 
   .appbar__ring {
     position: relative;
     width: 42px;
     height: 42px;
+    flex: none;
   }
 
   .appbar__ring svg {
@@ -1365,7 +1409,7 @@ footer {
   }
 
   .ring-bg {
-    stroke: #eadfd3;
+    stroke: #ebdfd3;
   }
 
   .ring-fg {
@@ -1381,144 +1425,239 @@ footer {
     inset: 0;
     display: grid;
     place-items: center;
+
     color: var(--ink);
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 850;
   }
 
+  /* ==========================================
+     COMPACT APP INTRO CARD
+     ========================================== */
   .hero {
-    padding: 20px 18px 74px;
+    margin: 0 10px 10px;
+    padding: 0;
   }
 
   .hero .container {
-    align-items: stretch;
+    display: block;
   }
 
-  .brand {
-    justify-content: center;
+  .hero .brand {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 0;
+    padding: 15px 16px 0;
+
+    gap: 11px;
     text-align: left;
-    gap: 12px;
   }
 
-  .brand .logo {
-    width: 58px;
-    height: 58px;
-    border-radius: 18px;
+  .hero .brand .logo {
+    width: 54px;
+    height: 54px;
+    border-radius: 17px;
+    border-width: 2px;
   }
 
-  .brand .logo i:nth-child(1) {
-    top: 12px;
-    width: 31px;
-    height: 11px;
+  .hero .brand .logo i:nth-child(1) {
+    top: 11px;
+    width: 30px;
+    height: 10px;
   }
 
-  .brand .logo i:nth-child(2) {
-    top: 24px;
-    width: 34px;
+  .hero .brand .logo i:nth-child(2) {
+    top: 23px;
+    width: 32px;
     height: 6px;
   }
 
-  .brand .logo i:nth-child(3) {
-    top: 33px;
-    width: 30px;
-    height: 8px;
+  .hero .brand .logo i:nth-child(3) {
+    top: 32px;
+    width: 29px;
+    height: 7px;
   }
 
   .brand__name {
-    font-size: 15px;
-    line-height: 1.15;
+    font-size: 14px;
+    letter-spacing: .065em;
+    line-height: 1.12;
   }
 
   .brand__city {
+    margin-top: 3px;
     font-size: 10px;
-    letter-spacing: .18em;
+    letter-spacing: .15em;
+  }
+
+  .hero > .container {
+    overflow: hidden;
+
+    background:
+      radial-gradient(circle at 92% 8%, rgba(246,183,60,.20), transparent 30%),
+      linear-gradient(155deg, #fffdf9 0%, #fff7ed 100%);
+
+    border: 1px solid #eadccd;
+    border-radius: 28px;
+
+    box-shadow:
+      0 14px 32px rgba(70,40,20,.08),
+      inset 0 1px 0 rgba(255,255,255,.9);
   }
 
   .hero__copy {
-    padding-top: 18px;
+    max-width: none;
+    margin: 0;
+    padding: 16px 16px 18px;
+    text-align: left;
+  }
+
+  .chip {
+    padding: 7px 11px;
+    font-size: 10px;
+    letter-spacing: .065em;
   }
 
   .hero h1 {
-    max-width: 440px;
-    margin: 18px auto 12px;
-    font-size: clamp(35px, 11vw, 49px);
-    line-height: 1.02;
+    max-width: none;
+    margin: 14px 0 9px;
+
+    font-size: clamp(30px, 9.5vw, 42px);
+    line-height: .98;
+    letter-spacing: -.048em;
+
+    text-align: left;
   }
 
   .hero__copy > p {
-    font-size: 15px;
-    line-height: 1.55;
-    padding: 0 4px;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
   }
 
   .hero__stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-top: 18px;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 7px;
+
+    margin-top: 15px;
   }
 
   .hero__stats div {
     min-width: 0;
-    padding: 11px 8px;
-    border-radius: 14px;
+    padding: 9px 6px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.78);
+    border-radius: 13px;
   }
 
   .hero__stats strong {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .hero__stats span {
-    font-size: 10px;
+    font-size: 9px;
   }
 
+  /* ==========================================
+     MAIN APP CARD — TRUE PHONE CARD
+     ========================================== */
   .application-wrap {
-    margin-top: -42px;
-    padding-bottom: 0;
+    margin: 0;
+    padding: 0 10px 106px;
   }
 
   .application-card {
-    min-height: 80vh;
-    overflow: visible;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-    border-radius: 28px 28px 0 0;
-    box-shadow: 0 -8px 34px rgba(70, 40, 20, .07);
+    min-height: 68vh;
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e7d9ca;
+    border-radius: 28px;
+
+    box-shadow:
+      0 18px 42px rgba(69,39,20,.10),
+      inset 0 1px 0 rgba(255,255,255,.9);
+  }
+
+  .application-card::before {
+    height: 4px;
   }
 
   .card-head {
     position: relative;
-    padding: 22px 18px 16px;
+    display: block;
+
+    padding: 24px 16px 15px;
   }
 
   .card-head::after {
     content: "";
     position: absolute;
-    top: 8px;
+    top: 9px;
     left: 50%;
-    width: 40px;
+
+    width: 42px;
     height: 4px;
-    margin-left: -20px;
-    background: #ddd1c5;
-    border-radius: 10px;
+    margin-left: -21px;
+
+    background: #dfd2c6;
+    border-radius: 999px;
+  }
+
+  .kicker {
+    font-size: 9px;
+    letter-spacing: .13em;
   }
 
   .card-head h2 {
-    font-size: 24px;
+    margin-top: 7px;
+    font-size: 22px;
+    line-height: 1.08;
   }
 
   .progress-copy {
-    display: none;
+    display: block;
+    margin-top: 10px;
   }
 
+  .progress-copy span {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .progress-track {
+    height: 3px;
+  }
+
+  /* ==========================================
+     HORIZONTAL APP STEP CHIPS
+     ========================================== */
   .step-nav {
     display: flex;
-    overflow-x: auto;
     gap: 7px;
-    padding: 11px 17px;
-    background: #fffaf5;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+
+    padding: 10px 12px 11px;
+
+    background: #fffaf4;
+
+    border-bottom: 1px solid var(--line);
+
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .step-nav::-webkit-scrollbar {
@@ -1527,40 +1666,68 @@ footer {
 
   .step-nav__item {
     flex: none;
+
     gap: 6px;
-    padding: 7px 12px 7px 7px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
+    padding: 6px 10px 6px 6px;
+
     background: #fff;
+
+    border: 1px solid #eadfd3;
+    border-radius: 999px;
+
+    scroll-snap-align: start;
   }
 
   .step-nav__item span {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
   }
 
+  .step-nav__item small {
+    font-size: 10.5px;
+    white-space: nowrap;
+  }
+
+  .step-nav__item.is-active {
+    background: #fff0df;
+    border-color: #efc59f;
+  }
+
+  /* ==========================================
+     APP FORM CONTENT
+     ========================================== */
   form {
-    padding: 0 18px calc(112px + env(safe-area-inset-bottom));
+    padding: 0 14px 18px;
   }
 
   .form-step {
-    padding-top: 24px;
+    padding-top: 20px;
   }
 
   .step-heading {
-    gap: 12px;
-    margin-bottom: 22px;
+    gap: 11px;
+    margin-bottom: 19px;
   }
 
   .step-heading__icon {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
+
     border-radius: 14px;
-    font-size: 21px;
+
+    font-size: 20px;
   }
 
   .step-heading h3 {
-    font-size: 22px;
+    font-size: 21px;
+    line-height: 1.08;
+  }
+
+  .step-heading p {
+    margin-top: 2px;
+    font-size: 12.5px;
+    line-height: 1.4;
   }
 
   .form-grid--2,
@@ -1568,99 +1735,256 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .field {
+    gap: 7px;
+    margin-bottom: 15px;
+  }
+
+  .field > span {
+    font-size: 12.5px;
+  }
+
   input:not([type="radio"]):not([type="checkbox"]),
   select,
   textarea {
-    min-height: 56px;
+    min-height: 54px;
+    padding: 14px 14px;
+
     border-radius: 15px;
+
     font-size: 16px;
   }
 
+  textarea {
+    min-height: 106px;
+  }
+
+  /* ==========================================
+     YES / NO APP SEGMENT
+     ========================================== */
   .segmented {
     max-width: none;
+    padding: 4px;
+
+    border-radius: 15px;
   }
 
   .segmented span {
-    min-height: 48px;
-    font-size: 15px;
+    min-height: 46px;
+    border-radius: 11px;
+
+    font-size: 14px;
   }
 
+  /* ==========================================
+     POSITION SERVICE CARDS
+     ========================================== */
   .position-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 9px;
   }
 
   .position-card span {
-    min-height: 98px;
-    padding: 14px;
+    min-height: 100px;
+
+    padding: 13px;
+
+    border-radius: 16px;
+  }
+
+  .position-card em {
+    margin-bottom: 4px;
+    font-size: 21px;
+  }
+
+  .position-card strong {
+    padding-right: 18px;
+    font-size: 13.5px;
+    line-height: 1.15;
+  }
+
+  .position-card small {
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
+
+  .position-card span::after {
+    top: 11px;
+    right: 11px;
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ==========================================
+     AVAILABILITY — NATIVE SETTINGS LIST
+     ========================================== */
+  .subsection-title {
+    margin: 5px 0 10px;
+    font-size: 16px;
   }
 
   .availability {
     grid-template-columns: 1fr;
     gap: 0;
+
     overflow: hidden;
+
     background: #fffaf5;
-    border: 1px solid var(--line);
-    border-radius: 18px;
+
+    border: 1px solid #e7dbcf;
+    border-radius: 17px;
   }
 
   .avail-row {
+    min-height: 52px;
+
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 5px 5px 15px;
+
+    gap: 10px;
+    padding: 4px 5px 4px 14px;
+
     background: transparent;
+
     border: 0;
     border-radius: 0;
   }
 
   .avail-row + .avail-row {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #eee3d8;
   }
 
   .avail-row strong {
-    color: var(--ink);
-    font-size: 14px;
     text-align: left;
+
+    color: var(--ink);
+
+    font-size: 13px;
+
     letter-spacing: 0;
     text-transform: none;
   }
 
   .avail-row select {
-    width: auto;
-    min-height: 48px;
+    width: min(58%, 190px);
+    min-height: 44px;
+
+    padding-left: 8px;
+    padding-right: 30px;
+
     border: 0;
+
     background-color: transparent;
+
     color: var(--orange);
+
+    font-size: 13px;
+    font-weight: 750;
+
     text-align: right;
-    font-size: 14px;
-    font-weight: 700;
+  }
+
+  /* ==========================================
+     CONDITIONAL PANELS / UPLOAD / REVIEW
+     ========================================== */
+  .panel {
+    padding: 16px 14px 1px;
+    border-radius: 16px;
+  }
+
+  .upload {
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px 14px;
+
+    border-radius: 17px;
+  }
+
+  .upload__icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+  }
+
+  .upload__text {
+    min-width: 0;
+  }
+
+  .upload strong {
+    font-size: 13px;
+  }
+
+  .upload small,
+  .file-status {
+    font-size: 10.5px;
   }
 
   .review {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
+  .review__item {
+    padding: 13px 14px;
+    border-radius: 14px;
+  }
+
+  .legal-card {
+    padding: 17px 15px;
+    border-radius: 17px;
+  }
+
+  .legal-card p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .certify-check {
+    padding: 14px;
+    border-radius: 15px;
+    font-size: 12.5px;
+  }
+
+  /* ==========================================
+     FLOATING BOTTOM APP ACTION BAR
+     ========================================== */
   .form-actions {
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
+    left: 10px;
+    right: 10px;
+    bottom: calc(8px + env(safe-area-inset-bottom));
+
     z-index: 8000;
+
     display: flex;
-    gap: 10px;
+    gap: 9px;
+
     margin: 0;
-    padding: 12px 15px calc(12px + env(safe-area-inset-bottom));
-    background: rgba(255, 250, 245, .95);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-top: 1px solid var(--line);
-    box-shadow: 0 -8px 26px rgba(66, 38, 22, .08);
+    padding: 9px;
+
+    background: rgba(255,255,255,.95);
+
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+
+    border: 1px solid rgba(222,209,196,.96);
+    border-radius: 22px;
+
+    box-shadow:
+      0 14px 34px rgba(57,34,20,.16),
+      inset 0 1px 0 rgba(255,255,255,.95);
   }
 
   .form-actions .btn {
-    min-height: 56px;
-    border-radius: 17px;
+    min-height: 54px;
+
+    border-radius: 16px;
   }
 
   #nextBtn,
@@ -1671,8 +1995,9 @@ footer {
   }
 
   #prevBtn {
-    width: 56px;
+    width: 54px;
     flex: none;
+
     padding: 0;
   }
 
@@ -1680,39 +2005,73 @@ footer {
     display: none;
   }
 
+  /* ==========================================
+     MOBILE ERROR TOAST
+     ========================================== */
   .form-global-error {
     position: fixed;
-    left: 15px;
-    right: 15px;
-    bottom: calc(91px + env(safe-area-inset-bottom));
+
+    left: 16px;
+    right: 16px;
+    bottom: calc(82px + env(safe-area-inset-bottom));
+
     z-index: 8001;
+
     margin: 0;
-    box-shadow: 0 10px 30px rgba(100, 30, 25, .14);
+
+    border-radius: 16px;
+
+    box-shadow: 0 12px 32px rgba(100,30,25,.16);
   }
 
+  /* ==========================================
+     FOOTER / SUCCESS
+     ========================================== */
   .trust-row {
     display: none;
   }
 
   footer {
-    padding-bottom: calc(100px + env(safe-area-inset-bottom));
+    margin: 10px;
+    padding: 18px 0 calc(92px + env(safe-area-inset-bottom));
+
+    border-radius: 22px;
+
+    overflow: hidden;
   }
 
   .footer__inner {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 18px;
+
+    gap: 7px;
+    padding: 0 16px;
   }
 
   .success-screen {
     place-items: end center;
-    padding: 0;
+
+    padding: 10px 10px calc(8px + env(safe-area-inset-bottom));
   }
 
   .success-card {
     width: 100%;
-    border-radius: 28px 28px 0 0;
-    padding-bottom: calc(28px + env(safe-area-inset-bottom));
+
+    padding: 30px 22px 22px;
+
+    border: 1px solid #eaded1;
+    border-radius: 28px;
+
+    box-shadow: 0 24px 60px rgba(56,34,22,.20);
+  }
+
+  .success-icon {
+    width: 74px;
+    height: 74px;
+  }
+
+  .success-card h2 {
+    font-size: 26px;
   }
 }
 
@@ -1727,6 +2086,73 @@ footer {
 
   .hero__stats span {
     display: none;
+  }
+}
+
+
+
+@media (max-width: 390px) {
+  .appbar {
+    left: 8px;
+    right: 8px;
+    padding: 0 11px;
+  }
+
+  .appbar__brand strong {
+    max-width: 175px;
+    font-size: 11px;
+  }
+
+  .hero,
+  .application-wrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .application-wrap {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .position-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .position-card span {
+    min-height: 96px;
+    padding: 12px;
+  }
+
+  .position-card strong {
+    font-size: 12.5px;
+  }
+
+  .form-actions {
+    left: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 340px) {
+  .position-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .hero__stats span {
+    display: none;
+  }
+
+  .appbar__brand strong {
+    max-width: 150px;
   }
 }
 
@@ -2045,67 +2471,135 @@ footer {
 
 @media (max-width: 760px) {
   .processing-overlay {
-    padding: 0;
+    padding:
+      calc(8px + env(safe-area-inset-top))
+      10px
+      calc(8px + env(safe-area-inset-bottom));
+
+    align-items: center;
+
+    background:
+      radial-gradient(circle at 90% 0%, rgba(246,183,60,.25), transparent 32%),
+      radial-gradient(circle at 0% 100%, rgba(239,91,36,.14), transparent 34%),
+      rgba(246,238,227,.94);
   }
 
   .processing-card {
     width: 100%;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: calc(24px + env(safe-area-inset-top)) 20px calc(24px + env(safe-area-inset-bottom));
-    border: 0;
-    border-radius: 0;
+    max-height: calc(100dvh - 24px);
+    min-height: 0;
+
+    display: block;
+
+    overflow-y: auto;
+
+    padding: 24px 16px 18px;
+
+    border: 1px solid #e5d7c8;
+    border-radius: 28px;
+
+    box-shadow:
+      0 22px 54px rgba(67,40,23,.18),
+      inset 0 1px 0 rgba(255,255,255,.9);
   }
 
   .processing-top {
     grid-template-columns: 1fr;
+
     justify-items: center;
-    gap: 18px;
+
+    gap: 15px;
+
     text-align: center;
   }
 
   .processing-ring {
-    width: 150px;
-    height: 150px;
+    width: 132px;
+    height: 132px;
+  }
+
+  .processing-ring::before {
+    inset: 10px;
   }
 
   .processing-ring__percent {
-    font-size: 40px;
+    font-size: 36px;
+  }
+
+  .processing-ring__label {
+    margin-top: 6px;
+    font-size: 9px;
+  }
+
+  .processing-kicker {
+    padding: 6px 10px;
+    font-size: 9.5px;
   }
 
   .processing-title {
-    font-size: 29px;
+    margin: 12px 0 7px;
+
+    font-size: 26px;
+    line-height: 1.02;
   }
 
   .processing-text {
-    max-width: 34ch;
+    max-width: 32ch;
+
     margin: 0 auto;
-    font-size: 15px;
+
+    font-size: 13.5px;
+    line-height: 1.45;
   }
 
-  .processing-packet,
+  .processing-packet {
+    width: 100%;
+
+    margin-top: 15px;
+    padding: 11px 12px;
+
+    text-align: left;
+
+    border-radius: 14px;
+  }
+
   .processing-list {
     width: 100%;
+
+    margin-top: 16px;
+
+    gap: 7px;
+
     text-align: left;
   }
 
   .processing-item {
-    padding: 12px 13px;
+    grid-template-columns: 12px 1fr auto;
+
+    gap: 10px;
+
+    padding: 10px 11px;
+
+    border-radius: 13px;
   }
 
   .processing-item__name {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .processing-item__status {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .processing-foot {
     justify-content: center;
+
+    gap: 6px 12px;
+
+    margin-top: 14px;
+
     text-align: center;
+    font-size: 10px;
   }
 }
 
